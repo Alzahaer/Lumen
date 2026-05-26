@@ -28,9 +28,7 @@ jobs:
           gradle-version: "8.10.2"
 
       - name: Preparar Android SDK
-        run: |
-          yes | sdkmanager --licenses
-          sdkmanager "platforms;android-35" "build-tools;35.0.0"
+        uses: android-actions/setup-android@v3
 
       - name: Gerar APK de teste
         run: gradle assembleDebug
